@@ -27,10 +27,10 @@ Add to your project a route moodule called `app/routes/sitemap[.]xml.ts` with th
 
 ```ts
 import { routes } from "@remix-run/dev/server-build";
-import type { LoaderArgs } from "@remix-run/node";
+import type { LoaderFunctionArgs } from "@remix-run/node";
 import { generateSitemap } from "@nasa-gcn/remix-seo";
 
-export function loader({ request }: LoaderArgs) {
+export function loader({ request }: LoaderFunctionArgs) {
   return generateSitemap(request, routes, {
     siteUrl: "https://balavishnuvj.com",
   });
